@@ -1,4 +1,4 @@
-# docker-7d2d
+# docker-vrising
 Linux Dedicated Server for the V Rising using Docker
 
 ## Features
