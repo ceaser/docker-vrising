@@ -1,0 +1,37 @@
+version: "2"
+services:
+  7d2d:
+    build: build
+    image: registry.home.divergentlogic.com/vrising:latest
+    container_name: vrising
+    hostname: vrising
+    tty: true
+    stdin_open: true
+    restart: unless-stopped
+    environment:
+      - GAME_Name=My V Rising Server
+      - GAME_Description=My V Rising Server
+      - GAME_Port=27015
+      - GAME_QueryPort=27016
+      - GAME_MaxConnectedUsers=10
+      - GAME_MaxConnectedAdmins=4
+      - GAME_SaveName=world1
+      - GAME_Password=
+      - GAME_ListOnMasterServer=true
+      - GAME_AutoSaveCount=40
+      - GAME_AutoSaveInterval=120
+      - GAME_GameSettingsPreset=StandardPvP
+      - GAME_ServerFps=30
+      - GAME_Secure=true
+      - GAME_AdminOnlyDebugEvents=true
+      - GAME_DisableDebugEvents=false
+    ports:
+      - "27016:27016/udp"
+      - "27015:27015/udp"
+    volumes:
+      - ./data:/data
+      - ./vrising-install:/opt/vrising
+    logging:
+      options:
+        max-size: "100k"
+        max-file: "2"

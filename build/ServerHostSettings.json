@@ -1,0 +1,18 @@
+{
+    "Name": "GAME_Name",
+    "Description": "GAME_Description",
+    "Port": GAME_Port,
+    "QueryPort": GAME_QueryPort,
+    "MaxConnectedUsers": GAME_MaxConnectedUsers,
+    "MaxConnectedAdmins": GAME_MaxConnectedAdmins,
+    "SaveName": "GAME_SaveName",
+    "Password": "GAME_Password",
+    "ListOnMasterServer": GAME_ListOnMasterServer,
+    "AutoSaveCount": GAME_AutoSaveCount,
+    "AutoSaveInterval": GAME_AutoSaveInterval,
+    "GameSettingsPreset": "GAME_GameSettingsPreset",
+    "ServerFps": GAME_ServerFps,
+    "Secure": GAME_Secure,
+    "AdminOnlyDebugEvents": GAME_AdminOnlyDebugEvents,
+    "DisableDebugEvents": GAME_DisableDebugEvents
+}
