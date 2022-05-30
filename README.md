@@ -2,7 +2,7 @@
 Linux Dedicated Server for the V Rising using Docker
 
 ## Features
-- [x] **ServerHostSettings.json **ENV** variables.
+- [x] **ServerHostSettings.json** **ENV** variables.
 - [x] **World-persistence** on container destruction.
 - [ ] Mods and custom **mod-configuration**.
 - [ ] Automatic update of game files.
