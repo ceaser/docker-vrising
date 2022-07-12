@@ -21,7 +21,7 @@ docker-compose
 ```YAML
 version: "2"
 services:
-  7d2d:
+  game:
     image: ceaser/vrising:latest
     container_name: vrising
     hostname: vrising

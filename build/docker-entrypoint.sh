@@ -43,7 +43,11 @@ function copy-config()
   sed -i "s/GAME_ListOnMasterServer/$GAME_ListOnMasterServer/" $datadir/Settings/ServerHostSettings.json
   sed -i "s/GAME_AutoSaveCount/$GAME_AutoSaveCount/" $datadir/Settings/ServerHostSettings.json
   sed -i "s/GAME_AutoSaveInterval/$GAME_AutoSaveInterval/" $datadir/Settings/ServerHostSettings.json
-  sed -i "s/GAME_GameSettingsPreset/$GAME_GameSettingsPreset/" $datadir/Settings/ServerHostSettings.json
+  if [ -z "$GAME_GameSettingsPreset" ]; then
+    sed -i "s/GAME_GameSettingsPreset//" $datadir/Settings/ServerHostSettings.json
+  else
+    sed -i "s/GAME_GameSettingsPreset/$GAME_GameSettingsPreset/" $datadir/Settings/ServerHostSettings.json
+  fi
   sed -i "s/GAME_ServerFps/$GAME_ServerFps/" $datadir/Settings/ServerHostSettings.json
   sed -i "s/GAME_Secure/$GAME_Secure/" $datadir/Settings/ServerHostSettings.json
   sed -i "s/GAME_AdminOnlyDebugEvents/$GAME_AdminOnlyDebugEvents/" $datadir/Settings/ServerHostSettings.json
@@ -61,7 +65,10 @@ if [ "$1" = 'copy' ]; then
 fi
 
 if [ "$1" = 'run' ]; then
-  install
+  if [ ! -f "$VRISING_HOME/VRisingServer.exe" ]
+  then
+    install
+  fi
   copy-config
   rm -rf /tmp/.X0-lock
   cd /opt/vrising
